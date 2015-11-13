@@ -15,7 +15,7 @@
   function config($httpProvider, $ionicConfigProvider, $urlRouterProvider) {
     $ionicConfigProvider.scrolling.jsScrolling(ionic.Platform.isIOS());
     $httpProvider.interceptors.push('loadingInterceptor');
-    $urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.otherwise('/search');
   }
 
   /**
@@ -38,4 +38,4 @@
   ]);
   module.run(['$rootScope', '$ionicLoading', run]);
 
-}(angular.module('app', ['fp.utils', 'ngIOS9UIWebViewPatch'])));
+}(angular.module('app', ['app.search', 'fp.utils', 'ngIOS9UIWebViewPatch'])));
