@@ -14,9 +14,6 @@
           $scope.shows = shows;
       })
     };
-
-
-    searchService.getShows('flash')
   }
 
   module.controller('searchController', [
