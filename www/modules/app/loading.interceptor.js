@@ -21,7 +21,7 @@
      * @param {Object} config - Angular $http config object.
      */
     function broadcast(event, config) {
-      var isApiRequest = !!config.url.match('TODO'); // TODO
+      var isApiRequest = !!config.url.match('http://series-ortiz.rhcloud.com/'); // TODO
       if (isApiRequest) { $rootScope.$broadcast(event); }
     }
 

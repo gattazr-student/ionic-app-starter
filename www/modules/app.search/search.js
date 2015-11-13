@@ -11,7 +11,7 @@
        views: {
          '': {
            templateUrl: 'modules/app.search/search.html',
-           controller: 'searchController'
+           controller: 'searchController as controller'
          }
        }
      });
