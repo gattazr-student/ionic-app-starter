@@ -38,4 +38,4 @@
   ]);
   module.run(['$rootScope', '$ionicLoading', run]);
 
-}(angular.module('app', ['ngIOS9UIWebViewPatch'])));
+}(angular.module('app', ['fp.utils', 'ngIOS9UIWebViewPatch'])));
