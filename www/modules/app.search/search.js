@@ -19,4 +19,4 @@
 
    module.config(['$stateProvider', config]);
 
- }(angular.module('app.search', ['fp.utils'])));
+ }(angular.module('app.search', ['app.show', 'fp.utils'])));

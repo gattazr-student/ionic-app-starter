@@ -4,13 +4,15 @@
             <label class="item item-input">
                 <i class="icon ion-search placeholder-icon"></i>
                 <input type="text" ng-model="search.string" placeholder="Search">
-                <button on-tap="controller.getShows()" class="button button-clear">Search</button>
+                <button on-tap="controller.getShows()" class="button button-positive button-clear">Search</button>
             </label>
         </div>
-        <div class="list card">
-            <div class="item" ng-repeat="show in shows" ui-sref="show({ showID: show.imdbID })">
+        <ion-list>
+            <ion-item
+                ng-repeat="show in shows"
+                ui-sref="show({ showID: show.imdbID })">
                 {{ show.Title }}
-            </div>
-        </div>
+            </ion-item>
+        </ion-list>
     </ion-content>
 </ion-view>

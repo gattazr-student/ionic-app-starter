@@ -1,0 +1,22 @@
+<ion-view view-title="{{show.Title}}">
+    <ion-content>
+        <h1 class="title center">{{show.Title}}</h1>
+        <div class="center">
+            {{if }}
+            <img src='{{show.Poster}}'/>
+        </div>
+        <div class="row">
+            <div class="col">Genre</div>
+            <div class="col">{{show.Genre}}</div>
+        </div>
+        <div class="row">
+            <div class="col">Released</div>
+            <div class="col">{{show.Released}}</div>
+        </div>
+        <div class="row">
+            <div class="col">Actors</div>
+            <div class="col">{{show.Actors}}</div>
+        </div>
+        <p>{{show.Plot}}</p>
+    </ion-content>
+</ion-view>
