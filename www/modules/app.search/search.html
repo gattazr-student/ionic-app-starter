@@ -1,18 +1,27 @@
 <ion-view view-title="Search">
     <ion-content>
-        <div class="list list-inset">
-            <label class="item item-input">
-                <i class="icon ion-search placeholder-icon"></i>
-                <input type="text" ng-model="search.string" placeholder="Search">
-                <button on-tap="controller.getShows()" class="button button-positive button-clear">Search</button>
-            </label>
+        <div class="list">
+            <div class="item item-input-inset">
+                <label class="item item-input item-input-wrapper">
+                    <i class="icon ion-search placeholder-icon"></i>
+                    <input type="text" ng-model="search.string" placeholder="Search">
+                </label>
+                <button on-tap="controller.getShows()" class="button button-clear">Search</button>
+            </div>
         </div>
-        <ion-list>
-            <ion-item
+        <div class="list list-inset">
+            <div
                 ng-repeat="show in shows"
                 ui-sref="show({ showID: show.imdbID })">
-                {{ show.Title }}
-            </ion-item>
-        </ion-list>
+                <div class="item item-thumbnail-left item-button-right">
+                    <img ng-if="show.Poster != 'N/A'" src="{{ show.Poster }}">
+                    <h2>{{ show.Title }}</h2>
+                    <p>{{ show.Year }}</p>
+                    <button class="button button-clear">
+                        <i class="icon ion-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
     </ion-content>
 </ion-view>

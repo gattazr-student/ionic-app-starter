@@ -1,22 +1,32 @@
 <ion-view view-title="{{show.Title}}">
     <ion-content>
-        <h1 class="title center">{{show.Title}}</h1>
-        <div class="center">
-            {{if }}
-            <img src='{{show.Poster}}'/>
+        <div class="show">
+            <h1 class="title center">{{show.Title}}</h1>
+            <div class="center">
+                <img ng-if="show.Poster != 'N/A'" src="{{ show.Poster }}">
+            </div>
+            <div class="row" ng-if="show.Genre != 'N/A'">
+                <div class="col">Genre</div>
+                <div class="col">{{show.Genre}}</div>
+            </div>
+            <div class="row" ng-if="show.Released != 'N/A'">
+                <div class="col">Released</div>
+                <div class="col">{{show.Released}}</div>
+            </div>
+            <div class="row" ng-if="show.Actors != 'N/A'">
+                <div class="col">Actors</div>
+                <div class="col">{{show.Actors}}</div>
+            </div>
+            <div class="row" ng-if="show.Director != 'N/A'">
+                <div class="col">Director</div>
+                <div class="col">{{show.Director}}</div>
+            </div>
+            <div class="row" ng-if="show.Writer != 'N/A'">
+                <div class="col">Writer</div>
+                <div class="col">{{show.Writer}}</div>
+            </div>
+
+            <p>{{show.Plot}}</p>
         </div>
-        <div class="row">
-            <div class="col">Genre</div>
-            <div class="col">{{show.Genre}}</div>
-        </div>
-        <div class="row">
-            <div class="col">Released</div>
-            <div class="col">{{show.Released}}</div>
-        </div>
-        <div class="row">
-            <div class="col">Actors</div>
-            <div class="col">{{show.Actors}}</div>
-        </div>
-        <p>{{show.Plot}}</p>
     </ion-content>
 </ion-view>
