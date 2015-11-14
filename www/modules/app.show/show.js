@@ -5,18 +5,25 @@
    'use strict';
 
 
-   function config($stateProvider) {
+   /**
+    * Define the module's configuration.
+    * @private
+    * @function config
+    * @param {Object} $stateProvider - UI Router $stateProvider service.
+    * @param {Object} templateUtils - Some template utilities.
+    */
+   function config($stateProvider, templateUtils) {
      $stateProvider.state('show', {
        url: '/show/{showID}',
        views: {
          '': {
-           templateUrl: 'modules/app.show/show.html',
+           templateUrl: templateUtils.getUrlFromModule(module),
            controller: 'showController as controller'
          }
        }
      });
    }
 
-   module.config(['$stateProvider', config]);
+   module.config(['$stateProvider', 'templateUtilsProvider', config]);
 
  }(angular.module('app.show', ['fp.utils'])));
