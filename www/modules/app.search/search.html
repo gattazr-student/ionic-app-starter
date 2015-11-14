@@ -1,5 +1,6 @@
 <ion-view view-title="Search" hide-back-button="true">
-    <ion-content>
+    <ion-content class="has-footer">
+        <!-- TODO: why is has-footer not automatic like has-header ? -->
         <div class="list">
             <div class="item item-input-inset">
                 <label class="item item-input item-input-wrapper">
@@ -12,11 +13,11 @@
         <div class="list list-inset">
             <div
                 ng-repeat="show in shows"
-                ui-sref="show({ showID: show.imdbID })">
+                ui-sref="show({ showID: show.id })">
                 <div class="item item-thumbnail-left item-button-right">
-                    <img ng-if="show.Poster != 'N/A'" src="{{ show.Poster }}">
-                    <h2>{{ show.Title }}</h2>
-                    <p>{{ show.Year }}</p>
+                    <img src=""/>
+                    <h2>{{ show.name }}</h2>
+                    <p>{{ show.fromYear }} - {{show.toYear > 0 ? show.toYear : 'in Progress' }}</p>
                     <button class="button button-clear">
                         <i class="icon ion-chevron-right"></i>
                     </button>

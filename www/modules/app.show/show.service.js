@@ -4,18 +4,19 @@
 (function (module) {
   'use strict';
 
-  var API_URL = 'http://www.omdbapi.com/?type=series&callback=JSON_CALLBACK&i=';
+  var API_URL = 'http://series-ortiz.rhcloud.com/series/{%0}/info?s=thetvdb&callback=JSON_CALLBACK';
 
   function ShowService($http) {
     var service = this;
 
     service.getShow = function (aSerieID) {
-      return $http.jsonp(API_URL+aSerieID).then(function (response) {
+      var call = API_URL.replace("{%0}", aSerieID);
+      return $http.jsonp(call).then(function (response) {
         return response.data;
       });
     };
   }
-  //
+
   module.service('showService', [
     '$http',
     ShowService

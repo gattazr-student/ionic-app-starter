@@ -1,5 +1,5 @@
 /**
- * @module app.search
+ * @module app.show.season
  */
 (function (module) {
   'use strict';
@@ -12,12 +12,12 @@
    * @param {Object} templateUtils - Some template utilities.
    */
   function config($stateProvider, templateUtils) {
-    $stateProvider.state('search', {
-      url: '/search',
+    $stateProvider.state('show.season', {
+      url: '/season/{seasonID}',
       views: {
-        '': {
+        '@': {
           templateUrl: templateUtils.getUrlFromModule(module),
-          controller: 'searchController as controller'
+          controller: 'seasonController as controller'
         }
       }
     });
@@ -25,4 +25,4 @@
 
   module.config(['$stateProvider', 'templateUtilsProvider', config]);
 
-}(angular.module('app.search', ['app.show', 'fp.utils'])));
+}(angular.module('app.show.season', ['fp.utils'])));
