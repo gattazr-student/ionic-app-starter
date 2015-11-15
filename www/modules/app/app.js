@@ -36,7 +36,12 @@
     '$urlRouterProvider',
     config
   ]);
-  module.run(['$rootScope', '$ionicLoading', run]);
+
+  module.run([
+    '$rootScope',
+    '$ionicLoading',
+    run
+  ]);
 
 }(angular.module('app', [
   'ngIOS9UIWebViewPatch',

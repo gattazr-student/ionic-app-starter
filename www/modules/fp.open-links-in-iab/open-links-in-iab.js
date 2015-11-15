@@ -101,4 +101,6 @@
     openLinksInIab
   ]);
 
-}(angular.module('fp.open-links-in-iab', ['fp.utils'])));
+}(angular.module('fp.open-links-in-iab', [
+  'fp.utils'
+])));

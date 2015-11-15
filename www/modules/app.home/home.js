@@ -24,6 +24,12 @@
     });
   }
 
-  module.config(['$stateProvider', 'templateUtilsProvider', config]);
+  module.config([
+    '$stateProvider',
+    'templateUtilsProvider',
+    config
+  ]);
 
-}(angular.module('app.home', ['fp.utils'])));
+}(angular.module('app.home', [
+  'fp.utils'
+])));

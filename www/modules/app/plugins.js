@@ -30,12 +30,7 @@
    * @param {Object} $cordovaKeyboard - ngCordova $cordovaKeyboard.
    * @param {Object} cordovaUtils - Some Cordova utilities.
    */
-  function run(
-    $cordovaSplashscreen,
-    $cordovaStatusbar,
-    $cordovaKeyboard,
-    cordovaUtils
-  ) {
+  function run($cordovaSplashscreen, $cordovaStatusbar, $cordovaKeyboard, cordovaUtils) {
     cordovaUtils.callWhenReady(function () {
       $cordovaStatusbar.style($cordovaStatusbar.STYLES.LIGHT_CONTENT);
       $cordovaStatusbar.overlaysWebView(true);
@@ -44,7 +39,11 @@
     });
   }
 
-  module.config(['$cordovaInAppBrowserProvider', config]);
+  module.config([
+    '$cordovaInAppBrowserProvider',
+    config
+  ]);
+
   module.run([
     '$cordovaSplashscreen',
     '$cordovaStatusbar',

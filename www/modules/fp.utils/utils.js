@@ -21,4 +21,8 @@
   module.constant('MODULES_PATH', MODULES_PATH);
   module.constant('MODULE_NAME_SEPARATOR', MODULE_NAME_SEPARATOR);
 
-}(angular.module('fp.utils', ['ionic', 'ngCordova', 'angular-cache'])));
+}(angular.module('fp.utils', [
+  'ionic',
+  'ngCordova',
+  'angular-cache'
+])));

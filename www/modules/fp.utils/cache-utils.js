@@ -34,6 +34,9 @@
     };
   }
 
-  module.service('cacheUtils', ['CacheFactory', CacheUtils]);
+  module.service('cacheUtils', [
+    'CacheFactory',
+    CacheUtils
+  ]);
 
 }(angular.module('fp.utils')));

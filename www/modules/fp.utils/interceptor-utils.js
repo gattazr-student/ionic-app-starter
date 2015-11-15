@@ -130,6 +130,9 @@
     };
   }
 
-  module.service('interceptorUtils', ['$injector', InterceptorUtils]);
+  module.service('interceptorUtils', [
+    '$injector',
+    InterceptorUtils
+]);
 
 }(angular.module('fp.utils')));

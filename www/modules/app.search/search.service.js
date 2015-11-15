@@ -15,7 +15,7 @@
       });
     };
   }
-  //
+
   module.service('searchService', [
     '$http',
     SearchService
