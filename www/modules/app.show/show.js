@@ -4,6 +4,9 @@
 (function (module) {
   'use strict';
 
+  function showResolver(showService, $stateParams){
+    return showService.getShow($stateParams.showID);
+  }
 
   /**
    * Define the module's configuration.
@@ -20,6 +23,9 @@
           templateUrl: templateUtils.getUrlFromModule(module),
           controller: 'showController as controller'
         }
+      },
+      resolve:{
+        show: [ 'showService', '$stateParams', showResolver ]
       }
     });
   }

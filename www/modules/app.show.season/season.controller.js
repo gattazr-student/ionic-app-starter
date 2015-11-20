@@ -4,19 +4,15 @@
 (function (module) {
   'use strict';
 
-  function SeasonController($scope, $stateParams, seasonService) {
+  function SeasonController($scope, season) {
     var controller = this;
 
-    $scope.season = {};
-    seasonService.getSeason($stateParams.showID, $stateParams.seasonID).then(function (season) {
-      $scope.season = season;
-    });
+    $scope.season = season;
   }
 
   module.controller('seasonController', [
     '$scope',
-    '$stateParams',
-    'seasonService',
+    'season',
     SeasonController
   ]);
 

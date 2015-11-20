@@ -4,6 +4,10 @@
 (function (module) {
   'use strict';
 
+  function seasonResolver(seasonService, $stateParams){
+    return seasonService.getSeason($stateParams.showID, $stateParams.seasonID);
+  }
+
   /**
    * Define the module's configuration.
    * @private
@@ -19,11 +23,18 @@
           templateUrl: templateUtils.getUrlFromModule(module),
           controller: 'seasonController as controller'
         }
+      },
+      resolve:{
+        season: [ 'seasonService', '$stateParams', seasonResolver ]
       }
     });
   }
 
-  module.config(['$stateProvider', 'templateUtilsProvider', config]);
+  module.config([
+    '$stateProvider',
+    'templateUtilsProvider',
+    config
+  ]);
 
 }(angular.module('app.show.season', [
     'app.config',

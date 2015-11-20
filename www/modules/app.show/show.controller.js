@@ -4,19 +4,15 @@
 (function (module) {
   'use strict';
 
-  function ShowController($scope, $stateParams, showService) {
+  function ShowController($scope, show) {
     var controller = this;
 
-    $scope.show = {};
-    showService.getShow($stateParams.showID).then(function (show) {
-      $scope.show = show;
-    });
+    $scope.show = show;
   }
 
   module.controller('showController', [
     '$scope',
-    '$stateParams',
-    'showService',
+    'show',
     ShowController
   ]);
 
