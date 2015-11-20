@@ -10,8 +10,8 @@
 
     var controller = this;
     controller.getShows = function(){
-        searchService.getShows($scope.search.string).then(function (shows) {
-          $scope.shows = shows;
+      searchService.getShows($scope.search.string).then(function (shows) {
+        $scope.shows = shows;
       })
     };
   }

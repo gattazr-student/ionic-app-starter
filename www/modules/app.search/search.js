@@ -30,6 +30,6 @@
   ]);
 
 }(angular.module('app.search', [
-  'app.show', 
+  'app.show',
   'fp.utils'
 ])));

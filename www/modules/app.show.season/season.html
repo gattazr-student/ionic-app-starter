@@ -1,0 +1,20 @@
+<ion-view view-title="Season {{ season.number }}">
+    <ion-content class="has-footer">
+        <!-- TODO: why is has-footer not automatic like has-header ? -->
+        <div class="season">
+            <div class="center">
+                <h1 class>Season {{ season.number }}</h1>
+            </div>
+
+            <div class="list list-inset ">
+                <div ng-repeat="episode in season.episodes">
+                    <div class="item item-text-wrap">
+                        <h2>{{ episode.number }} : {{ episode.name }}</h2>
+                        <p>{{ episode.description }}</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </ion-content>
+</ion-view>

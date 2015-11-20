@@ -1,32 +1,24 @@
 <ion-view view-title="{{show.Title}}">
-    <ion-content>
+    <ion-content class="has-footer">
+        <!-- TODO: why is has-footer not automatic like has-header ? -->
         <div class="show">
-            <h1 class="title center">{{show.Title}}</h1>
+            <h1 class="title center">{{ show.name }}</h1>
             <div class="center">
-                <img ng-if="show.Poster != 'N/A'" src="{{ show.Poster }}">
+                <img src="" />
             </div>
-            <div class="row" ng-if="show.Genre != 'N/A'">
-                <div class="col">Genre</div>
-                <div class="col">{{show.Genre}}</div>
+            <p>{{ show.description }}</p>
+            <div class="list list-inset">
+                <div
+                    ng-repeat="season in show.seasons"
+                    ui-sref=".season({ seasonID: season.number })">
+                    <div class="item item-button-right">
+                        <p>Season {{ season.number }}</p>
+                        <button class="button button-clear">
+                            <i class="icon ion-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div class="row" ng-if="show.Released != 'N/A'">
-                <div class="col">Released</div>
-                <div class="col">{{show.Released}}</div>
-            </div>
-            <div class="row" ng-if="show.Actors != 'N/A'">
-                <div class="col">Actors</div>
-                <div class="col">{{show.Actors}}</div>
-            </div>
-            <div class="row" ng-if="show.Director != 'N/A'">
-                <div class="col">Director</div>
-                <div class="col">{{show.Director}}</div>
-            </div>
-            <div class="row" ng-if="show.Writer != 'N/A'">
-                <div class="col">Writer</div>
-                <div class="col">{{show.Writer}}</div>
-            </div>
-
-            <p>{{show.Plot}}</p>
         </div>
     </ion-content>
 </ion-view>
