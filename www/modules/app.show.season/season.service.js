@@ -4,22 +4,24 @@
 (function (module) {
   'use strict';
 
-  var API_URL = 'http://series-ortiz.rhcloud.com/series/{%0}/season/{%1}?s=thetvdb&callback=JSON_CALLBACK';
-
-  function SeasonService($http) {
+  function SeasonService($http, serviceAppConfig) {
     var service = this;
 
     service.getSeason = function (aSerieID, aSeasonId) {
-      var call = API_URL.replace("{%0}", aSerieID)
-                        .replace("{%1}", aSeasonId);
-      return $http.jsonp(call).then(function (response) {
-        return response.data;
+      var baseAPI = serviceAppConfig.getConfigValue('API_SERIES_BASE');
+
+      var wCall = baseAPI+'series/{%0}/season/{%1}?s=thetvdb&callback=JSON_CALLBACK';
+      wCall = wCall.replace("{%0}", aSerieID)
+                   .replace("{%1}", aSeasonId);
+      return $http.jsonp(wCall).then(function (aResponse) {
+        return aResponse.data;
       });
     };
   }
 
   module.service('seasonService', [
     '$http',
+    'serviceAppConfig',
     SeasonService
   ]);
 

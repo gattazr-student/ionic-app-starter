@@ -32,5 +32,6 @@
 
 }(angular.module('app.show', [
   'app.show.season',
+  'app.config',
   'fp.utils'
 ])));

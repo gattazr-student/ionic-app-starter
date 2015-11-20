@@ -25,4 +25,7 @@
 
   module.config(['$stateProvider', 'templateUtilsProvider', config]);
 
-}(angular.module('app.show.season', ['fp.utils'])));
+}(angular.module('app.show.season', [
+    'app.config',
+    'fp.utils'
+])));

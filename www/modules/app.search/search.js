@@ -31,5 +31,6 @@
 
 }(angular.module('app.search', [
   'app.show',
+  'app.config',
   'fp.utils'
 ])));

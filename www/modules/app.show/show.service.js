@@ -4,21 +4,23 @@
 (function (module) {
   'use strict';
 
-  var API_URL = 'http://series-ortiz.rhcloud.com/series/{%0}/info?s=thetvdb&callback=JSON_CALLBACK';
-
-  function ShowService($http) {
+  function ShowService($http, serviceAppConfig) {
     var service = this;
 
     service.getShow = function (aSerieID) {
-      var call = API_URL.replace("{%0}", aSerieID);
-      return $http.jsonp(call).then(function (response) {
-        return response.data;
+      var wBaseAPI = serviceAppConfig.getConfigValue('API_SERIES_BASE');
+
+      var wCall = wBaseAPI + 'series/{%0}/info?s=thetvdb&callback=JSON_CALLBACK';
+      var wCall = wCall.replace("{%0}", aSerieID);
+      return $http.jsonp(wCall).then(function (aResponse) {
+        return aResponse.data;
       });
     };
   }
 
   module.service('showService', [
     '$http',
+    'serviceAppConfig',
     ShowService
   ]);
 
