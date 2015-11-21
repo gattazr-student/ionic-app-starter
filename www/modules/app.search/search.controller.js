@@ -4,13 +4,13 @@
 (function (module) {
   'use strict';
 
-  function SearchController($scope, searchService) {
+  function SearchController($scope, showService) {
     $scope.shows = [];
     $scope.search = {string : ''};
 
     var controller = this;
-    controller.getShows = function(){
-      searchService.getShows($scope.search.string).then(function (shows) {
+    controller.searchShow = function(){
+      showService.searchShow($scope.search.string).then(function (shows) {
         $scope.shows = shows;
       })
     };
@@ -18,7 +18,7 @@
 
   module.controller('searchController', [
     '$scope',
-    'searchService',
+    'showService',
     SearchController
   ]);
 

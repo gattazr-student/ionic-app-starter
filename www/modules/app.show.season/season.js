@@ -4,8 +4,8 @@
 (function (module) {
   'use strict';
 
-  function seasonResolver(seasonService, $stateParams){
-    return seasonService.getSeason($stateParams.showID, $stateParams.seasonID);
+  function seasonResolver(showService, $stateParams){
+    return showService.getShowSeason($stateParams.showID, $stateParams.seasonID);
   }
 
   /**
@@ -25,7 +25,7 @@
         }
       },
       resolve:{
-        season: [ 'seasonService', '$stateParams', seasonResolver ]
+        season: [ 'showService', '$stateParams', seasonResolver ]
       }
     });
   }
@@ -37,6 +37,7 @@
   ]);
 
 }(angular.module('app.show.season', [
+    'app.show',
     'app.config',
     'fp.utils'
 ])));
