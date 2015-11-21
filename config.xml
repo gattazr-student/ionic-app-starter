@@ -20,6 +20,7 @@
   <content src="index.html"/>
   <access origin="mailto:*" launch-external="yes"/>
   <access origin="tel:*" launch-external="yes"/>
+  <access origin="*" />
   <allow-intent href="mailto:*"/>
   <allow-intent href="tel:*"/>
   <allow-navigation href="mailto:*"/>
