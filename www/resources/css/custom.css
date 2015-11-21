@@ -14,3 +14,16 @@
     margin: 10px;
     padding: 20px
 }
+
+.sidemenu-dark{
+    border-color: #111;
+    background-color: #444;
+    color: #fff;
+}
+
+.sidemenu-dark .item-content{
+    background-color: #444 !important;
+    color: #fff;
+    border-top: 1px solid #333333;
+    border-bottom: 2px solid #333333;
+}

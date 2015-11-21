@@ -32,7 +32,7 @@
     "start": "ionic serve",
     "build": "gulp build --type production",
     "android": "gulp && ionic run android --device",
-    "ios": "gulp && ionic run ios --device"
+    "ios": "gulp && ionic build ios && ionic emulate ios"
   },
   "cordovaPlugins": [
     "ionic-plugin-keyboard",
