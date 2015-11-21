@@ -11,12 +11,12 @@
      * Get resources using JSONP.
      * @private
      * @function jsonp
-     * @param {String} aUrl - String to append to API_SERIES_BASE.
+     * @param {String} aUrl - String to append to API_SHOW_BASE.
      * @param {Object} [aParams] - Params to pass in the query string.
      * @return {Promise}
      */
     function jsonp(aUrl, aParams) {
-      var wBaseAPI = serviceAppConfig.getConfigValue('API_SERIES_BASE');
+      var wBaseAPI = serviceAppConfig.getConfigValue('API_SHOW_BASE');
       var wParams = _.extend({ callback: 'JSON_CALLBACK', s: 'thetvdb' }, aParams);
       var wPromise = $http.jsonp(wBaseAPI + aUrl, { params: wParams });
       return wPromise.then(function (aResponse) { return aResponse.data; });
@@ -42,25 +42,26 @@
      */
     service.getShow = function (aShowId) {
       var wCall = 'series/{%0}/info'
-                    .replace("{%0}", aShowId);
+                  .replace("{%0}", aShowId);
 
       return jsonp(wCall);
     };
 
     /**
      * Get a TV show season episodes given its ID and the season number.
-     * @method getSeason
+     * @method getShowSeason
      * @param {String} showId - id of the show
      * @param {Number} seasonNumber - number of the season to get
      * @return json describing a season of a show
      */
     service.getShowSeason = function (aShowId, aSeasonNumber) {
-        var wCall = 'series/{%0}/season/{%1}'
-                      .replace("{%0}", aShowId)
-                      .replace("{%1}", aSeasonNumber);
+      var wCall = 'series/{%0}/season/{%1}'
+                  .replace("{%0}", aShowId)
+                  .replace("{%1}", aSeasonNumber);
 
-        return jsonp(wCall);
-      };
+      return jsonp(wCall);
+    };
+
   }
 
   module.service('showService', [

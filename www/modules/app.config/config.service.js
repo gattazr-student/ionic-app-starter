@@ -8,8 +8,9 @@
     var service = this;
 
     var CONFIG = {
-      'API_SERIES_BASE' : 'http://series-ortiz.rhcloud.com/',
-      'API_POSTERS_BASE' : 'http://webservice.fanart.tv/v3/'
+      'API_SHOW_BASE' : 'http://series-ortiz.rhcloud.com/',
+      'API_ART_BASE' : 'http://webservice.fanart.tv/v3/tv/',
+      'API_ART_KEY' : 'MY_PRIVATE_KEY'
     };
 
     service.getConfigValue = function (aKeyName) {
