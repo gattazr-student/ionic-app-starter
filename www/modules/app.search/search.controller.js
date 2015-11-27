@@ -14,13 +14,13 @@
         $scope.shows = shows;
 
         /* Fetching art for every found show */
-        for (var wI = 0, wLen = shows.length; wI < wLen; wI++) {
-          var wArt = artService.getShowArt(shows[wI].id);
-          console.log(wI+': ' + JSON.stringify(wArt));
-          if(wArt){
-            shows[wI].art = wArt;
-          }
-        }
+        _.each(shows, function(aShow, aI){
+          artService.getShowArt(aShow.id).then(function (aResult){
+            if(aResult){
+              shows[aI].art = aResult;
+            }
+          });
+        })
       })
     };
   }

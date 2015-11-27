@@ -4,8 +4,15 @@
 (function (module) {
   'use strict';
 
-  function showResolver(showService, $stateParams){
-    return showService.getShow($stateParams.showID);
+  function showResolver(showService, artService, $stateParams, $q){
+    var promises = {
+      show: showService.getShow($stateParams.showID),
+      art: artService.getShowArt($stateParams.showID)
+    }
+    return $q.all(promises).then(function(aResult){
+            aResult.show.art = aResult.art;
+            return aResult.show;
+      });
   }
 
   /**
@@ -25,7 +32,7 @@
         }
       },
       resolve:{
-        show: [ 'showService', '$stateParams', showResolver ]
+        show: [ 'showService', 'artService', '$stateParams', '$q', showResolver ]
       }
     });
   }

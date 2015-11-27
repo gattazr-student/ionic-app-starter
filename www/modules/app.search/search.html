@@ -14,7 +14,7 @@
                 ng-repeat="show in shows"
                 ui-sref="show({ showID: show.id })">
                 <div class="item item-thumbnail-left item-button-right">
-                    <img src=""/>
+                    <img ng-src="{{ show.art.tvthumb[0].url }}"/>
                     <h2>{{ show.name }}</h2>
                     <p>{{ show.fromYear }} - {{show.toYear > 0 ? show.toYear : 'in Progress' }}</p>
                     <button class="button button-clear">
