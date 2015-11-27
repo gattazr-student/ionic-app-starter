@@ -10,7 +10,10 @@
       art: artService.getShowArt($stateParams.showID)
     }
     return $q.all(promises).then(function(aResult){
-            aResult.show.art = aResult.art;
+
+            aResult.show.art = aResult.art ?
+                               aResult.art.tvthumb[0].url :
+                               "http://img2.wikia.nocookie.net/__cb20130511180903/legendmarielu/images/b/b4/No_image_available.jpg";
             return aResult.show;
       });
   }

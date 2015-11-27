@@ -16,9 +16,9 @@
         /* Fetching art for every found show */
         _.each(shows, function(aShow, aI){
           artService.getShowArt(aShow.id).then(function (aResult){
-            if(aResult){
-              shows[aI].art = aResult;
-            }
+              shows[aI].art = aResult ?
+                              aResult.tvthumb[0].url :
+                              "http://img2.wikia.nocookie.net/__cb20130511180903/legendmarielu/images/b/b4/No_image_available.jpg";
           });
         })
       })

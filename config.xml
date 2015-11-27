@@ -1,26 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget
-  xmlns="http://www.w3.org/ns/widgets"
-  xmlns:cdv="http://cordova.apache.org/ns/1.0"
-  xmlns:gap="http://phonegap.com/ns/1.0"
-  id="reverse.domain.name"
-  version="1.0.0-dev">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0" id="reverse.domain.name" version="1.0.0-dev">
   <name>Show Manager</name>
   <description>Easily start an Ionic app</description>
-  <author
-    href="https://twitter.com/fingerproof"
-    email="sp@fing.pro">
+  <author href="https://twitter.com/fingerproof" email="sp@fing.pro">
     Sebastien Pittion
   </author>
-  <author
-    href="https://www.linkedin.com/in/r%C3%A9mi-gattaz-0a02094b"
-    email="remi.gattaz@gmail.com">
+  <author href="https://www.linkedin.com/in/r%C3%A9mi-gattaz-0a02094b" email="remi.gattaz@gmail.com">
     Rémi GATTAZ
   </author>
   <content src="index.html"/>
   <access origin="mailto:*" launch-external="yes"/>
   <access origin="tel:*" launch-external="yes"/>
-  <access origin="*" />
+  <access origin="*"/>
   <allow-intent href="mailto:*"/>
   <allow-intent href="tel:*"/>
   <allow-navigation href="mailto:*"/>

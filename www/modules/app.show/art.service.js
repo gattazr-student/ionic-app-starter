@@ -21,7 +21,8 @@
 
       var wParams = _.extend({ api_key: wKEYAPI, callback: '' }, aParams);
       var wPromise = $http.get(wBaseAPI + aUrl, { params: wParams });
-      return wPromise.then(function (aResponse) { return aResponse.data; });
+      return wPromise.then(function (aResponse) { return aResponse.data; })
+                     .catch(function(aResult){ return '' });
     }
 
     /**
