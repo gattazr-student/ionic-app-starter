@@ -32,6 +32,7 @@
     "start": "ionic serve",
     "build": "gulp build --type production",
     "android": "gulp && ionic run android --device",
+    "live-android": "npm run android -- --livereload",
     "ios": "gulp && ionic build ios && ionic emulate ios"
   },
   "cordovaPlugins": [
