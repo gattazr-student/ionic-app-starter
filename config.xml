@@ -9,13 +9,7 @@
     Rémi GATTAZ
   </author>
   <content src="index.html"/>
-  <access origin="mailto:*" launch-external="yes"/>
-  <access origin="tel:*" launch-external="yes"/>
-  <access origin="*"/>
-  <allow-intent href="mailto:*"/>
-  <allow-intent href="tel:*"/>
-  <allow-navigation href="mailto:*"/>
-  <allow-navigation href="tel:*"/>
+  <allow-navigation href="*"/>
   <preference name="phonegap-version" value="cli-5.2.0"/>
   <preference name="android-minSdkVersion" value="16"/>
   <preference name="BackupWebStorage" value="none"/>
