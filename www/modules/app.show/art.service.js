@@ -19,7 +19,7 @@
       var wBaseAPI = serviceAppConfig.getConfigValue('API_ART_BASE');
       var wKEYAPI = serviceAppConfig.getConfigValue('API_ART_KEY');
 
-      var wParams = _.extend({ api_key: wKEYAPI, callback: '' }, aParams);
+      var wParams = _.extend({ api_key: wKEYAPI }, aParams);
       var wPromise = $http.get(wBaseAPI + aUrl, { params: wParams });
       return wPromise.then(function (aResponse) { return aResponse.data; })
                      .catch(function(aResult){ return '' });
