@@ -2,9 +2,11 @@
     <ion-content>
         <div class="season">
             <div class="center">
+                <img class="img" ng-src="{{ season.art }}"/>
                 <h1 class>Season {{ season.number }}</h1>
             </div>
-
+        </div>
+        <div class="season-content">
             <div class="list list-inset ">
                 <div ng-repeat="episode in season.episodes">
                     <div class="item item-text-wrap">

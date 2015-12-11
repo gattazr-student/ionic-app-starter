@@ -1,10 +1,12 @@
-<ion-view view-title="{{show.Title}}">
+<ion-view view-title="{{show.name}}">
     <ion-content>
         <div class="show">
-            <h1 class="title center">{{ show.name }}</h1>
             <div class="center">
                 <img class="img" ng-src="{{ show.art }}"/>
+                <h1 class="title center">{{ show.name }}</h1>
             </div>
+        </div>
+        <div class="season-content">
             <p>{{ show.description }}</p>
             <div class="list list-inset">
                 <div

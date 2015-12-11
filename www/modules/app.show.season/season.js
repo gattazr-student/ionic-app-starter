@@ -4,8 +4,26 @@
 (function (module) {
   'use strict';
 
-  function seasonResolver(showService, $stateParams){
-    return showService.getShowSeason($stateParams.showID, $stateParams.seasonID);
+  function seasonResolver(showService, artService, $stateParams, $q){
+    var promises = {
+      show: showService.getShowSeason($stateParams.showID, $stateParams.seasonID),
+      art: artService.getShowArt($stateParams.showID)
+    }
+    return $q.all(promises).then(function(aResult){
+      aResult.show.art = "";
+
+      var wI = 0;
+      if(aResult.art && aResult.art.showbackground){
+        var wSize = aResult.art.showbackground.length;
+        while(wI < wSize && aResult.art.showbackground[wI].season != $stateParams.seasonID){
+          wI++;
+        }
+        if(wI < wSize){
+          aResult.show.art = aResult.art.showbackground[wI].url;
+        }
+      }
+      return aResult.show;
+    });
   }
 
   /**
@@ -25,7 +43,7 @@
         }
       },
       resolve:{
-        season: [ 'showService', '$stateParams', seasonResolver ]
+        season: [ 'showService', 'artService', '$stateParams', '$q', seasonResolver ]
       }
     });
   }
